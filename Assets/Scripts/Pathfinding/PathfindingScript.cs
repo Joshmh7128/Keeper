@@ -21,7 +21,7 @@ public class PathfindingScript : MonoBehaviour
     void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos)
     {
         Node StartNode = grid.NodeFromWorldPosition(a_StartPos);
-        Node TargetNode = grid.NodeFromWorldPosition(a_StartPos);
+        Node TargetNode = grid.NodeFromWorldPosition(a_TargetPos);
 
         List<Node> OpenList = new List<Node>();
         HashSet<Node> ClosedList = new HashSet<Node>();
@@ -45,6 +45,7 @@ public class PathfindingScript : MonoBehaviour
             if (CurrentNode == TargetNode)
             {
                 GetFinalPath(StartNode, TargetNode);
+                break;
             }
 
             foreach (Node NeighborNode in grid.GetNeighboringNodes(CurrentNode))
@@ -92,4 +93,7 @@ public class PathfindingScript : MonoBehaviour
         int iy = Mathf.Abs(a_nodeA.gridY - a_nodeB.gridY);
         return ix + iy;
     }
+
+
+
 }

@@ -130,7 +130,7 @@ public class PathfindingGrid : MonoBehaviour
                     Gizmos.color = Color.yellow;
                 }
 
-                if (FinalPath != null)
+                if ((FinalPath != null) && (FinalPath.Contains(node)))
                 {
                     Gizmos.color = Color.red;
                 }
