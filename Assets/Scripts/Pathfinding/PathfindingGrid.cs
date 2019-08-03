@@ -21,6 +21,12 @@ public class PathfindingGrid : MonoBehaviour
         CreateGrid();
     }
 
+    private void Update()
+    {
+        if (Input.GetKey("space"))
+        CreateGrid();
+    }
+
     void CreateGrid()
     {
         grid = new Node[gridSizeX, gridSizeY];

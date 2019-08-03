@@ -38,6 +38,7 @@ public class BuildableTemplateScript : MonoBehaviour
         if (col.tag == "Buildable")
         {
             canPlace = true;
+            Debug.Log("canPlace = true");
         }
     }
 
