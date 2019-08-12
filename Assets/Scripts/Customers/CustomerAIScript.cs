@@ -6,11 +6,11 @@ public class CustomerAIScript : MonoBehaviour
 {
     GameManager gameManager;
 
-    void Update()
+    /*void Update()
     {
         foreach (GameObject item in gameManager.itemsForSale)
         {
 
         }
-    }
+    }*/
 }

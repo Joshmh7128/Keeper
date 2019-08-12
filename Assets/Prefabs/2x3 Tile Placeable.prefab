@@ -465,6 +465,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   canBreak: 0
+  gameManager: {fileID: 0}
+  pathGrid: {fileID: 0}
 --- !u!1 &4734480927847724417
 GameObject:
   m_ObjectHideFlags: 0

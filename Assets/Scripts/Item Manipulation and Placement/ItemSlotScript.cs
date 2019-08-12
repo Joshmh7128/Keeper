@@ -5,8 +5,16 @@ using UnityEngine;
 public class ItemSlotScript : MonoBehaviour
 {
     public GameObject heldItem;
+    public GameManager gameManager;
+    public Transform nodePos;
     public bool slotFull;
     public int setBuffer = 6; //use this to create a buffer between setting the slot to full or empty.
+
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+    }
+
 
     public void OnTriggerStay2D(Collider2D col)
     {
@@ -16,6 +24,7 @@ public class ItemSlotScript : MonoBehaviour
             {
                 //set our held item to the item being placed in the slot
                 heldItem = col.gameObject;
+                //gameManager.AddItem(heldItem.name, nodePos);
             }
         }
     }

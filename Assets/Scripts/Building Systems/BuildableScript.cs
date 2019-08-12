@@ -5,12 +5,21 @@ using UnityEngine;
 public class BuildableScript : MonoBehaviour
 {
     public bool canBreak;
+    public GameManager gameManager;
+    public PathfindingGrid pathGrid;
+
+    private void Start()
+    {
+        gameManager = GameObject.Find("GameManager").GetComponent<GameManager>();
+        pathGrid = GameObject.Find("GameManager").GetComponent<PathfindingGrid>();
+    }
 
     public void Update()
     {
-        if ((canBreak) && (Input.GetMouseButtonDown(0)))
+        if ((canBreak) && (Input.GetMouseButtonDown(0)) && (gameManager.inBuildMode))
         {
             Destroy(gameObject);
+            pathGrid.CreateGrid();
         }
     }
 

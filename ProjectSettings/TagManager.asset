@@ -11,6 +11,7 @@ TagManager:
   - Breaker
   - Floor
   - Wall
+  - NPC
   layers:
   - Default
   - TransparentFX
