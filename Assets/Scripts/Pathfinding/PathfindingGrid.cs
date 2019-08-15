@@ -39,7 +39,7 @@ public class PathfindingGrid : MonoBehaviour
                 Vector3 worldPoint = bottomLeft + Vector3.right * (x * nodeDiameter + nodeRadius) + Vector3.up * (y * nodeDiameter + nodeRadius);
                 bool Wall = true;
 
-                if (Physics.CheckSphere(worldPoint, nodeRadius, WallMask))
+                if (Physics2D.OverlapCircle(worldPoint, nodeRadius, WallMask))
                 {
                     Wall = false;
                 }
