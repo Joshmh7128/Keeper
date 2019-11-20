@@ -39,21 +39,22 @@ public class PathfindingScript : MonoBehaviour
     private void Update()
     { // live calculate ONE path at a time
         FindPath(StartPosition.position, EndPoints[endPointChoose].position, endPointChoose); // get our path, will also get final path
+        // if this becomes too stressful, we can easily have this run once every X frames. That way it's far easier for the game to calculate.
     }
 
     // run when a path is requested
     void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos, int arrayInt)
-    {
+    {   // get our start node and our target node
         Node StartNode = grid.NodeFromWorldPosition(a_StartPos);
         Node TargetNode = grid.NodeFromWorldPosition(a_TargetPos);
-
+        // create a new list of nodes that we'll add to
         List<Node> OpenList = new List<Node>();
-        HashSet<Node> ClosedList = new HashSet<Node>();
-
+        HashSet<Node> ClosedList = new HashSet<Node>(); // since we really only need to read the list of nodes that we'll be rejecting, we can make it a hashset
+        // add our startnode to the path
         OpenList.Add(StartNode);
-
+        // while our count is more than 0, continue to loop and add nodes to the list
         while(OpenList.Count > 0)
-        {
+        {   // add our current node to the list and start pathfinding our route
             Node CurrentNode = OpenList[0];
             for(int i = 1; i < OpenList.Count; i++)
             {
@@ -62,7 +63,7 @@ public class PathfindingScript : MonoBehaviour
                     CurrentNode = OpenList[i];
                 }
             }
-
+            // remove our current node from the list, and add our next node
             OpenList.Remove(CurrentNode);
             ClosedList.Add(CurrentNode);
 
@@ -71,7 +72,7 @@ public class PathfindingScript : MonoBehaviour
                 GetFinalPath(StartNode, TargetNode, arrayInt);
                 break;
             }
-
+            // for every neighboring node in our path, check to see if it's a wall, then check to see if we've already been there
             foreach (Node NeighborNode in grid.GetNeighboringNodes(CurrentNode))
             {
                 if (!NeighborNode.IsWall || ClosedList.Contains(NeighborNode))
