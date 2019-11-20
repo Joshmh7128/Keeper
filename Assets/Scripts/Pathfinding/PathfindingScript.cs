@@ -4,21 +4,38 @@ using UnityEngine;
 
 public class PathfindingScript : MonoBehaviour
 {
-    PathfindingGrid grid;
+    public PathfindingGrid grid;
     public Transform StartPosition;
-    public Transform TargetPosition;
+    public List<Transform> EndPoints;
+    public int endPointChoose;
 
-    private void Awake()
+    private void Start()
     {
-        grid = GetComponent<PathfindingGrid>();
+        // get and set our end points of the room
+        GameObject EndPointManager = GameObject.Find("EndPointManager");
+        EndPoints = EndPointManager.GetComponent<EndPointManager>().endPointList;
+
+        // fill the array of paths
+        int count = 0; // to keep track of where we are in the loop
+        foreach (Transform endPoint in EndPoints)
+        {
+            FindPath(StartPosition.position, EndPoints[count].position, count); // get our path, will also get final path
+            count++; // starts at 0
+            Debug.Log("Set count " + count);
+
+            if (count < EndPoints.Count)
+            { count = 0;}
+        }
+
     }
 
     private void Update()
-    {
-        FindPath(StartPosition.position, TargetPosition.position);
+    { // live calculate ONE path at a time
+        FindPath(StartPosition.position, EndPoints[endPointChoose].position, endPointChoose); // get our path, will also get final path
     }
 
-    void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos)
+    // run when a path is requested
+    void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos, int arrayInt)
     {
         Node StartNode = grid.NodeFromWorldPosition(a_StartPos);
         Node TargetNode = grid.NodeFromWorldPosition(a_TargetPos);
@@ -44,7 +61,7 @@ public class PathfindingScript : MonoBehaviour
 
             if (CurrentNode == TargetNode)
             {
-                GetFinalPath(StartNode, TargetNode);
+                GetFinalPath(StartNode, TargetNode, arrayInt);
                 break;
             }
 
@@ -71,7 +88,7 @@ public class PathfindingScript : MonoBehaviour
         }
     }
 
-    void GetFinalPath(Node a_StartingNode, Node a_EndNode)
+    void GetFinalPath(Node a_StartingNode, Node a_EndNode, int arrayInt)
     {
         List<Node> FinalPath = new List<Node>();
         Node CurrentNode = a_EndNode;
@@ -83,8 +100,8 @@ public class PathfindingScript : MonoBehaviour
         }
 
         FinalPath.Reverse();
-
-        grid.FinalPath = FinalPath;
+        Debug.Log("About to set arrayInt" + arrayInt);
+        grid.FinalPaths[arrayInt] = FinalPath;
     }
 
     int GetManhattenDistance(Node a_nodeA, Node a_nodeB)

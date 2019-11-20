@@ -9,7 +9,7 @@ public class PathfindingGrid : MonoBehaviour
     public float nodeRadius;
     public float Distance;
     public Node[,] grid;
-    public List<Node> FinalPath;
+    public List<Node>[] FinalPaths = new List<Node>[6];
     float nodeDiameter;
     int gridSizeX, gridSizeY;
 
@@ -43,7 +43,7 @@ public class PathfindingGrid : MonoBehaviour
                 {
                     Wall = false;
                 }
-                Debug.Log(x + y);
+                //Debug.Log(x + y);
                 grid[x, y] = new Node(Wall, worldPoint, x, y);
             }
         }
@@ -120,6 +120,8 @@ public class PathfindingGrid : MonoBehaviour
         return NeighboringNodes;
     }
 
+    public int showPath;
+
     private void OnDrawGizmos()
     {
         Gizmos.DrawWireCube(transform.position, new Vector3(gridWorldSize.x, gridWorldSize.y, gridWorldSize.z));
@@ -136,7 +138,7 @@ public class PathfindingGrid : MonoBehaviour
                     Gizmos.color = Color.yellow;
                 }
 
-                if ((FinalPath != null) && (FinalPath.Contains(node)))
+                if ((FinalPaths[showPath] != null) && (FinalPaths[showPath].Contains(node)))
                 {
                     Gizmos.color = Color.red;
                 }
