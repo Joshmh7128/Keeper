@@ -8,13 +8,21 @@ public class PathfindingScript : MonoBehaviour
     public Transform StartPosition;
     public List<Transform> EndPoints;
     public int endPointChoose;
-
+    private EndPointManager EndPointManager;
+    public PathfindingScript pathFindingScript;
     private void Start()
     {
+        // grab the EndPointManager
+        EndPointManager = GameObject.Find("EndPointManager").GetComponent<EndPointManager>();
+        EndPoints = EndPointManager.endPointList;
         // get and set our end points of the room
-        GameObject EndPointManager = GameObject.Find("EndPointManager");
-        EndPoints = EndPointManager.GetComponent<EndPointManager>().endPointList;
+        EndPointListUpdate();
+        // add ourselves to the list of Pathfinders in the EndPointManager
+        EndPointManager.pathFinders.Add(this);
+    }
 
+    public void EndPointListUpdate()
+    {
         // fill the array of paths
         int count = 0; // to keep track of where we are in the loop
         foreach (Transform endPoint in EndPoints)
@@ -24,9 +32,8 @@ public class PathfindingScript : MonoBehaviour
             Debug.Log("Set count " + count);
 
             if (count < EndPoints.Count)
-            { count = 0;}
+            { count = 0; }
         }
-
     }
 
     private void Update()
@@ -100,7 +107,7 @@ public class PathfindingScript : MonoBehaviour
         }
 
         FinalPath.Reverse();
-        Debug.Log("About to set arrayInt" + arrayInt);
+        //Debug.Log("About to set arrayInt" + arrayInt);
         grid.FinalPaths[arrayInt] = FinalPath;
     }
 

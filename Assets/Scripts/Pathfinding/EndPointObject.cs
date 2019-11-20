@@ -9,5 +9,7 @@ public class EndPointObject : MonoBehaviour
     {
         // add this object to the end point list upon it's creation
         GameObject.Find("EndPointManager").GetComponent<EndPointManager>().endPointList.Add(transform);
+        // make sure everything knows we've updated the list of end points
+        GameObject.Find("EndPointManager").GetComponent<EndPointManager>().EndPointUpdate();
     }
 }

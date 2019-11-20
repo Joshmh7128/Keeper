@@ -163,6 +163,7 @@ MonoBehaviour:
   StartPosition: {fileID: 0}
   EndPoints: []
   endPointChoose: 0
+  pathFindingScript: {fileID: 7471872564825504987}
 --- !u!1 &7471872564998822016
 GameObject:
   m_ObjectHideFlags: 0
