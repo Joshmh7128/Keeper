@@ -12,6 +12,7 @@ TagManager:
   - Floor
   - Wall
   - NPC
+  - Part
   layers:
   - Default
   - TransparentFX
