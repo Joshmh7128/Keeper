@@ -14,7 +14,7 @@ public class EquipmentCrafting : MonoBehaviour
     //checks what item is being crafted
     public bool isSword = true;
     public bool isShield = false;
-    public bool 
+    //public bool 
 
 
     //allows crafting slots to be added
