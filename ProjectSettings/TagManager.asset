@@ -13,6 +13,7 @@ TagManager:
   - Wall
   - NPC
   - Part
+  - EndPoint
   layers:
   - Default
   - TransparentFX
