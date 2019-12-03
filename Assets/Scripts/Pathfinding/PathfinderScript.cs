@@ -20,28 +20,35 @@ public class PathfinderScript : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {
-        if (!isLeaving)
-        {
-            pathfindingManagerScript.endPointChoose = endPointInt;
-            pathfindingGrid.showPath = endPointInt;
-            // get our target position
-            List<Node> FinalPath = pathfindingGrid.FinalPaths[endPointInt];
+    {   // our pathfinding, runs once per tick when placed in the update
+        pathfindingManagerScript.endPointChoose = endPointInt;
+        pathfindingGrid.showPath = endPointInt;
+        // get our target position
+        List<Node> FinalPath = pathfindingGrid.FinalPaths[endPointInt];
+        // check to see that the node exists
+        if (FinalPath.Count > 0)
+        {   // set our target path
             targetPos = FinalPath[0].nodePos;
-            transform.position = Vector3.MoveTowards(transform.position, targetPos, 0.025f);
         }
         else
         {
-
+            Debug.Log("No more nodes in path");
+            //have it return to the shop entrance
+            endPointInt = 0;
         }
-    }
+        // move to our target pos
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, 0.025f);
 
-    private void OnTriggerEnter2D(Collider2D col)
+        // if we're leaving, go to the exit
+        if (isLeaving) { endPointInt = 0; };
+     }
+
+    public void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.tag == "EndPoint")
-        {
+        /*if (col.gameObject.tag == "EndPoint")
+        {*/
             isLeaving = true;
-
-        }
+            Debug.Log("Collision checked, returning to shop entrance.");
+        //}
     }
 }
