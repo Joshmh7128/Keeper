@@ -10,12 +10,14 @@ public class PathfinderScript : MonoBehaviour
     public Vector3 targetPos;
     public int endPointInt;
     public bool isLeaving;
+    public float movementSpeed;
 
     private void Start()
     {
         // add our starting position to the start pos list
         pathfindingManagerScript.StartPosition = transform;
         isLeaving = false; // we're not leaving
+        //endPointInt = Random.Range(1, 4);
     }
 
     // Update is called once per frame
@@ -37,7 +39,7 @@ public class PathfinderScript : MonoBehaviour
             endPointInt = 0;
         }
         // move to our target pos
-        transform.position = Vector3.MoveTowards(transform.position, targetPos, 0.025f);
+        transform.position = Vector3.MoveTowards(transform.position, targetPos, movementSpeed);
 
         // if we're leaving, go to the exit
         if (isLeaving) { endPointInt = 0; };
