@@ -61,7 +61,7 @@ public class AddToCraftSlot : MonoBehaviour
         
         if (Input.GetMouseButtonUp(0) && !isColliding)
         {
-            part.transform.SetParent(null);
+           // part.transform.SetParent(null);
             part.transform.position = dragAndDrop.initialPos;
         }
     }

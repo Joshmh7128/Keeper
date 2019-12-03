@@ -35,6 +35,7 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         if (!isColliding)
         {
             transform.position = initialPos;
+            Debug.Log("end drag");
         }
     }
 

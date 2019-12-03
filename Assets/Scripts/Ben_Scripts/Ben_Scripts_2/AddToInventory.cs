@@ -19,19 +19,26 @@ public class AddToInventory : MonoBehaviour
         
     }
 
+    public int i;
     public void AddInventory()
     {
-        for (int i = 0; i < inventory.slots.Length; i++)
+        if ( i < inventory.slots.Length)
         {
             //checks if inventory is full
-            if (inventory.isFull[i] == false)
+            if (inventory.isFull[i] == true)
+            {
+                i++;
+                AddInventory();
+            }
+            else
             {
                 //Item is added to inv
                 inventory.isFull[i] = true;
                 //check if part is already in inventory, would need to stack
                 GameObject item = Instantiate(itemButton, inventory.slots[i].transform, false);
                 item.SetActive(true);
-                break;
+                Debug.Log("Placed");
+                i = 0;
             }
         }
     }
