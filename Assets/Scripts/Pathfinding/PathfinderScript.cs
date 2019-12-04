@@ -38,6 +38,7 @@ public class PathfinderScript : MonoBehaviour
         else if (endPointInt == 0)
         {
             Debug.Log("Left the shop successfully");
+            // clean up
             Destroy(ownLerp);
             Destroy(ownGrid);
             Destroy(ownParent);
