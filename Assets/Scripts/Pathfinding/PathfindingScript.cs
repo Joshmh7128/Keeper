@@ -10,6 +10,8 @@ public class PathfindingScript : MonoBehaviour
     public int endPointChoose;
     private EndPointManager EndPointManager;
     public PathfindingScript pathFindingScript;
+    public bool isCalcPath;
+
     private void Start()
     {
         // grab the EndPointManager
@@ -20,7 +22,7 @@ public class PathfindingScript : MonoBehaviour
         // add ourselves to the list of Pathfinders in the EndPointManager
         EndPointManager.pathFinders.Add(this);
         // start the calc
-        StartCoroutine("CalculatePath");
+        //StartCoroutine("CalculatePath");
     }
 
     public void EndPointListUpdate()
@@ -40,18 +42,25 @@ public class PathfindingScript : MonoBehaviour
 
     private void Update()
     {
-        FindPath(StartPosition.position, EndPoints[endPointChoose].position, endPointChoose); // get our path, will also get final path
-    }
 
+        FindPath(StartPosition.position, EndPoints[endPointChoose].position, endPointChoose); // get our path, will also get final path
+        /*
+        if (!isCalcPath)
+        {
+            StartCoroutine("CalculatePath");
+        }*/
+    }
+    /*
     IEnumerator CalculatePath()
     {
+        isCalcPath = true;
         // live calculate ONE path at a time
         FindPath(StartPosition.position, EndPoints[endPointChoose].position, endPointChoose); // get our path, will also get final path
         yield return new WaitForSeconds(1f);
-        StartCoroutine("CalculatePath");
         // if this becomes too stressful, we can easily have this run once every X frames. That way it's far easier for the game to calculate.
+        isCalcPath = false;
     }
-
+    */
     // run when a path is requested
     void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos, int arrayInt)
     {   // get our start node and our target node

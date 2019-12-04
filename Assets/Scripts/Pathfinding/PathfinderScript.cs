@@ -6,6 +6,9 @@ public class PathfinderScript : MonoBehaviour
 {
     public PathfindingGrid pathfindingGrid;
     public PathfindingScript pathfindingManagerScript;
+    public GameObject ownLerp;
+    public GameObject ownGrid;
+    public GameObject ownParent;
 
     public Vector3 targetPos;
     public int endPointInt;
@@ -17,7 +20,7 @@ public class PathfinderScript : MonoBehaviour
         // add our starting position to the start pos list
         pathfindingManagerScript.StartPosition = transform;
         isLeaving = false; // we're not leaving
-        //endPointInt = Random.Range(1, 4);
+        endPointInt = Random.Range(1, 4);
     }
 
     // Update is called once per frame
@@ -32,12 +35,21 @@ public class PathfinderScript : MonoBehaviour
         {   // set our target path
             targetPos = FinalPath[0].nodePos;
         }
+        else if (endPointInt == 0)
+        {
+            Debug.Log("Left the shop successfully");
+            Destroy(ownLerp);
+            Destroy(ownGrid);
+            Destroy(ownParent);
+            Destroy(gameObject);
+        }
         else
         {
             Debug.Log("No more nodes in path");
             //have it return to the shop entrance
             endPointInt = 0;
         }
+
         // move to our target pos
         transform.position = Vector3.MoveTowards(transform.position, targetPos, movementSpeed);
 
