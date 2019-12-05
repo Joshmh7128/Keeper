@@ -8,6 +8,7 @@ public class AddToCraftSlot : MonoBehaviour
     public bool isColliding = false;
     private GameObject part;
     private DragAndDrop dragAndDrop;
+    public EquipmentCrafting equipmentCraftingscript;
     //public AddToInventory AddToInventory;
 
     public bool isFull = false;
@@ -52,17 +53,26 @@ public class AddToCraftSlot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonUp(0) && isColliding)
+        if (Input.GetMouseButtonUp(0) && isColliding && !isFull)
         {
             part.transform.SetParent(gameObject.transform, false);
-            //add to parts to parts list
-
+            isFull = true;
+            //add to parts list
+            equipmentCraftingscript.parts.Add(part);
         }
+
+        /*
+        if (isFull == true)
+        {
+
+        }*/
         
         if (Input.GetMouseButtonUp(0) && !isColliding)
         {
-           // part.transform.SetParent(null);
+            //put detach children function in here?
+            //part.transform.SetParent(null);
             part.transform.position = dragAndDrop.initialPos;
+            isFull = false;
         }
     }
 }
