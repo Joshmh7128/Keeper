@@ -44,41 +44,13 @@ public class DragAndDrop : MonoBehaviour, IDragHandler, IBeginDragHandler, IEndD
         
     }
 
-    /*
-    private void OnTriggerEnter2D(Collider2D other)
-    {
-        if(other.CompareTag("part"))
-        {
-            isColliding = true;
-            transform.position = Vector2.zero;
-
-        }
-
-    }*/
 
     private void Update()
     {
-        /*
-        if (selected == true)
-        {
-            Vector2 cursorPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            transform.position = new Vector2(cursorPos.x, cursorPos.y);
-        }
 
-        if (Input.GetMouseButtonUp(0))
-        {
-            selected = false;
-        }*/
     }
 
-    /*
-    private void OnMouseOver()
-    {
-        if (Input.GetMouseButtonDown(0))
-        {
-            selected = true;
-        }
-    }*/
+
 
 
 
