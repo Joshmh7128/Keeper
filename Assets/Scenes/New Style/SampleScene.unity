@@ -958,6 +958,11 @@ MonoBehaviour:
   parts: []
   swordPanel: {fileID: 0}
   isSword: 1
+  isShield: 0
+  isAxe: 0
+  power: 0
+  durability: 0
+  value: 0
 --- !u!1 &314256929
 GameObject:
   m_ObjectHideFlags: 0
@@ -1093,6 +1098,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isColliding: 0
+  equipmentCraftingscript: {fileID: 2035648461}
   isFull: 0
 --- !u!1 &321044240
 GameObject:
@@ -1147,6 +1153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isColliding: 0
+  equipmentCraftingscript: {fileID: 2035648461}
   isFull: 0
 --- !u!50 &321044243
 Rigidbody2D:
@@ -1890,6 +1897,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isColliding: 0
+  equipmentCraftingscript: {fileID: 2035648461}
   isFull: 0
 --- !u!50 &543445609
 Rigidbody2D:
@@ -2860,6 +2868,7 @@ MonoBehaviour:
   inventory: {fileID: 1844867213}
   itemButton: {fileID: 6216446526372448236, guid: 6e880aaf13535df4b9cf9b36152ebb87,
     type: 3}
+  i: 0
 --- !u!114 &1258051294
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3709,6 +3718,7 @@ MonoBehaviour:
   inventory: {fileID: 1844867213}
   itemButton: {fileID: 729688476228635019, guid: 88a2898a8ccff544999c1b805465097b,
     type: 3}
+  i: 0
 --- !u!114 &1772458815
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4448,6 +4458,7 @@ MonoBehaviour:
   inventory: {fileID: 1844867213}
   itemButton: {fileID: 284256373373106952, guid: a0ab5b9bb5cd82e46b56f0479f876ff5,
     type: 3}
+  i: 0
 --- !u!114 &1902146099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4624,6 +4635,11 @@ MonoBehaviour:
   parts: []
   swordPanel: {fileID: 249644693}
   isSword: 1
+  isShield: 0
+  isAxe: 0
+  power: 0
+  durability: 0
+  value: 0
 --- !u!1 &2073341429
 GameObject:
   m_ObjectHideFlags: 0
