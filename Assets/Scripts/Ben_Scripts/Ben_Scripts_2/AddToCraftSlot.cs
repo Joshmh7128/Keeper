@@ -17,6 +17,7 @@ public class AddToCraftSlot : MonoBehaviour
     {
         if (other.CompareTag("Part"))
         {
+            
             part = other.gameObject;
             dragAndDrop = other.GetComponent<DragAndDrop>();
             isColliding = true;
@@ -56,17 +57,14 @@ public class AddToCraftSlot : MonoBehaviour
         if (Input.GetMouseButtonUp(0) && isColliding && !isFull)
         {
             part.transform.SetParent(gameObject.transform, false);
+            Debug.Log("IsFull");
+            equipmentCraftingscript.parts.Add(part);  
             isFull = true;
+            equipmentCraftingscript.CheckCraftingSlots();
             //add to parts list
-            equipmentCraftingscript.parts.Add(part);
+
         }
 
-        /*
-        if (isFull == true)
-        {
-
-        }*/
-        
         if (Input.GetMouseButtonUp(0) && !isColliding)
         {
             //put detach children function in here?
