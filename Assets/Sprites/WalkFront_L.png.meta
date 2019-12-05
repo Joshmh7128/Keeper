@@ -1,11 +1,11 @@
 fileFormatVersion: 2
-guid: 082a74dcaec564b6891c22a796b138de
+guid: 69dc747c0c1574113aabfb36c9a829a5
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Walk_DR_0
-    21300002: Walk_DR_1
-    21300004: Walk_DR_2
-    21300006: Walk_DR_3
+    21300000: WalkFront_L_0
+    21300002: WalkFront_L_1
+    21300004: WalkFront_L_2
+    21300006: WalkFront_L_3
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -99,10 +99,10 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_DR_0
+      name: WalkFront_L_0
       rect:
         serializedVersion: 2
-        x: 24
+        x: 19
         y: 10
         width: 27
         height: 89
@@ -113,16 +113,16 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab9f7cefff49c47e59e74e73d28e2e35
+      spriteID: 9d80ee043330d4318bbc6d290f323fcd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_DR_1
+      name: WalkFront_L_1
       rect:
         serializedVersion: 2
-        x: 87
+        x: 79
         y: 12
         width: 44
         height: 85
@@ -133,13 +133,13 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4117d22a429984f74901561e3ed398c7
+      spriteID: 1a5b8109d4a81410b95cd732c1b49fbd
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_DR_2
+      name: WalkFront_L_2
       rect:
         serializedVersion: 2
         x: 159
@@ -153,16 +153,16 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9bdf6a31388e4085bb304806989d6e0
+      spriteID: 5cf9aa42b272743d09da3630f62f70c7
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_DR_3
+      name: WalkFront_L_3
       rect:
         serializedVersion: 2
-        x: 231
+        x: 226
         y: 11
         width: 33
         height: 88
@@ -173,7 +173,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84e3fca05a1ba4af89971f98f2c8476d
+      spriteID: f62f10a8cba454ddd8b49e0c72d2b868
       vertices: []
       indices: 
       edges: []
@@ -181,7 +181,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 06a1f8af89efc4788bb4c275afcaab3e
+    spriteID: 3b40b9a38513344dd8ba102e1661d35a
     vertices: []
     indices: 
     edges: []

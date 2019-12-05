@@ -1,11 +1,9 @@
 fileFormatVersion: 2
-guid: 082a74dcaec564b6891c22a796b138de
+guid: ed572fb215706486a8bda5e3567102c2
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Walk_DR_0
-    21300002: Walk_DR_1
-    21300004: Walk_DR_2
-    21300006: Walk_DR_3
+    21300000: IdleBack_L_0
+    21300002: IdleBack_L_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -99,13 +97,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_DR_0
+      name: IdleBack_L_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 10
-        width: 27
-        height: 89
+        x: 20
+        y: 9
+        width: 31
+        height: 92
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -113,19 +111,19 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ab9f7cefff49c47e59e74e73d28e2e35
+      spriteID: d00f2b223f17744038b7ea632c51327f
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_DR_1
+      name: IdleBack_L_1
       rect:
         serializedVersion: 2
-        x: 87
-        y: 12
-        width: 44
-        height: 85
+        x: 90
+        y: 9
+        width: 31
+        height: 93
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -133,47 +131,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4117d22a429984f74901561e3ed398c7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_DR_2
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 11
-        width: 32
-        height: 89
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c9bdf6a31388e4085bb304806989d6e0
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_DR_3
-      rect:
-        serializedVersion: 2
-        x: 231
-        y: 11
-        width: 33
-        height: 88
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84e3fca05a1ba4af89971f98f2c8476d
+      spriteID: 1b0295924b5004863af35f79633b7093
       vertices: []
       indices: 
       edges: []
@@ -181,7 +139,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 06a1f8af89efc4788bb4c275afcaab3e
+    spriteID: 964b01c824e0a41749f7b5d244714eea
     vertices: []
     indices: 
     edges: []

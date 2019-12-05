@@ -1,11 +1,12 @@
 fileFormatVersion: 2
-guid: 082a74dcaec564b6891c22a796b138de
+guid: 34e64f5a8b1624038a27523bffab804d
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Walk_DR_0
-    21300002: Walk_DR_1
-    21300004: Walk_DR_2
-    21300006: Walk_DR_3
+    21300000: WalkBack_L_0
+    21300002: WalkBack_L_1
+    21300004: WalkBack_L_2
+    21300006: WalkBack_L_3
+    21300008: WalkBack_L_4
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -99,53 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Walk_DR_0
+      name: WalkBack_L_0
       rect:
         serializedVersion: 2
-        x: 24
-        y: 10
-        width: 27
-        height: 89
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ab9f7cefff49c47e59e74e73d28e2e35
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_DR_1
-      rect:
-        serializedVersion: 2
-        x: 87
-        y: 12
-        width: 44
-        height: 85
-      alignment: 7
-      pivot: {x: 0.5, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4117d22a429984f74901561e3ed398c7
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Walk_DR_2
-      rect:
-        serializedVersion: 2
-        x: 159
-        y: 11
+        x: 21
+        y: 7
         width: 32
-        height: 89
+        height: 94
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -153,19 +114,59 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: c9bdf6a31388e4085bb304806989d6e0
+      spriteID: 558ae4f7685964418a041e7b68532677
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Walk_DR_3
+      name: WalkBack_L_1
+      rect:
+        serializedVersion: 2
+        x: 90
+        y: 9
+        width: 33
+        height: 93
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ae4d7c3452ed04ae4814dcc2749e4f62
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkBack_L_2
+      rect:
+        serializedVersion: 2
+        x: 160
+        y: 8
+        width: 35
+        height: 94
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9e3a82977b8bc442c877826fffc68d41
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkBack_L_3
       rect:
         serializedVersion: 2
         x: 231
         y: 11
-        width: 33
-        height: 88
+        width: 29
+        height: 91
       alignment: 7
       pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -173,7 +174,27 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 84e3fca05a1ba4af89971f98f2c8476d
+      spriteID: b3ac53ec73bf241308ed4bf911a3f97f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WalkBack_L_4
+      rect:
+        serializedVersion: 2
+        x: 301
+        y: 12
+        width: 34
+        height: 89
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 15fe7ba847ac04d66a7c93210edbbd2c
       vertices: []
       indices: 
       edges: []
@@ -181,7 +202,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: 06a1f8af89efc4788bb4c275afcaab3e
+    spriteID: 7c22f9139ec954842a2a265cc3dbc566
     vertices: []
     indices: 
     edges: []
