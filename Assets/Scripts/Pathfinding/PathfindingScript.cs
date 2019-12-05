@@ -10,6 +10,8 @@ public class PathfindingScript : MonoBehaviour
     public int endPointChoose;
     private EndPointManager EndPointManager;
     public PathfindingScript pathFindingScript;
+    public bool isCalcPath;
+
     private void Start()
     {
         // grab the EndPointManager
@@ -19,6 +21,8 @@ public class PathfindingScript : MonoBehaviour
         EndPointListUpdate();
         // add ourselves to the list of Pathfinders in the EndPointManager
         EndPointManager.pathFinders.Add(this);
+        // start the calc
+        //StartCoroutine("CalculatePath");
     }
 
     public void EndPointListUpdate()
@@ -29,19 +33,34 @@ public class PathfindingScript : MonoBehaviour
         {
             FindPath(StartPosition.position, EndPoints[count].position, count); // get our path, will also get final path
             count++; // starts at 0
-            Debug.Log("Set count " + count);
+           // Debug.Log("Set count " + count);
 
             if (count < EndPoints.Count)
             { count = 0; }
         }
     }
 
-    private void Update()
-    { // live calculate ONE path at a time
-        FindPath(StartPosition.position, EndPoints[endPointChoose].position, endPointChoose); // get our path, will also get final path
-        // if this becomes too stressful, we can easily have this run once every X frames. That way it's far easier for the game to calculate.
-    }
+    private void FixedUpdate()
+    {
 
+        FindPath(StartPosition.position, EndPoints[endPointChoose].position, endPointChoose); // get our path, will also get final path
+        /*
+        if (!isCalcPath)
+        {
+            StartCoroutine("CalculatePath");
+        }*/
+    }
+    /*
+    IEnumerator CalculatePath()
+    {
+        isCalcPath = true;
+        // live calculate ONE path at a time
+        FindPath(StartPosition.position, EndPoints[endPointChoose].position, endPointChoose); // get our path, will also get final path
+        yield return new WaitForSeconds(1f);
+        // if this becomes too stressful, we can easily have this run once every X frames. That way it's far easier for the game to calculate.
+        isCalcPath = false;
+    }
+    */
     // run when a path is requested
     void FindPath(Vector3 a_StartPos, Vector3 a_TargetPos, int arrayInt)
     {   // get our start node and our target node

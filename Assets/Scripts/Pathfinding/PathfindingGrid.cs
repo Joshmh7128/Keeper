@@ -9,7 +9,8 @@ public class PathfindingGrid : MonoBehaviour
     public float nodeRadius;
     public float Distance;
     public Node[,] grid;
-    public List<Node>[] FinalPaths = new List<Node>[6];
+    public int FinalPathAmounts;
+    public List<Node>[] FinalPaths = new List<Node>[255];
     float nodeDiameter;
     int gridSizeX, gridSizeY;
 
