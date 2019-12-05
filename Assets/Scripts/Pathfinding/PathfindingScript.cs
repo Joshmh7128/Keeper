@@ -40,7 +40,7 @@ public class PathfindingScript : MonoBehaviour
         }
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
 
         FindPath(StartPosition.position, EndPoints[endPointChoose].position, endPointChoose); // get our path, will also get final path
